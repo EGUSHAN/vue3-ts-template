@@ -1,0 +1,30 @@
+$curSizeType: "small";
+
+$sizes: (
+        small: (
+                fontSize: 12px,
+        ),
+        middle: (
+                fontSize: 14px,
+        ),
+        large: (
+                fontSize: 16px,
+        ),
+        outside: (
+                fontSize: 18px,
+        )
+);
+
+@mixin useSize() {
+  @each $key, $value in $sizes {
+    $curSizeType: $key !global;
+    html[data-size="#{$key}"] & {
+      @content;
+    }
+  }
+}
+
+@function getSize($paramName) {
+  $fontMap: map-get($sizes, $curSizeType);
+  @return map-get($map: $fontMap, $key: $paramName);
+}
