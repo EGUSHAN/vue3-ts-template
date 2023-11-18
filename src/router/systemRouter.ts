@@ -9,7 +9,7 @@ const routes: RouteRecordRaw[] = [
   {
     name: 'upload',
     path: '/upload',
-    component: () => import(/* webpackChunkName: "layout" */ '../views/upload-page.vue')
+    component: () => import(/* webpackChunkName: "layout" */ '../views/UploadPage.vue')
   }
 ]
 
