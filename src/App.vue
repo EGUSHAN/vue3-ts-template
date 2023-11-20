@@ -3,7 +3,11 @@
   <div class="box">aaa</div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import dayjs from 'dayjs'
+
+console.log(dayjs().format('YYYY-MM-DD'))
+</script>
 
 <style lang="scss" scoped>
 .box {
