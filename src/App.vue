@@ -5,8 +5,11 @@
 
 <script setup lang="ts">
 import dayjs from 'dayjs'
+import { cloneDeep } from 'lodash'
 
 console.log(dayjs().format('YYYY-MM-DD'))
+const pbj = {}
+console.log(cloneDeep(pbj))
 </script>
 
 <style lang="scss" scoped>
