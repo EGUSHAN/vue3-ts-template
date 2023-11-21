@@ -47,6 +47,7 @@ const handleProgress = event => {
 
   // 计算上传速度
   const deltaTime = (Date.now() - startTimeRef.value) / 1000 // 单位: 秒
+  startTimeRef.value = Date.now() // 单位：秒 下次开始时间
   const speed = uploaded / deltaTime / (1024 * 1024) // 单位: MB/s
 
   speedInfoRef.value = `${speed.toFixed(2)} MB/s`
