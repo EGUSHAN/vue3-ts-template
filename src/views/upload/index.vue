@@ -19,7 +19,7 @@
   {{ uploadSpeedKb }}
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: 'uploadPage',
   data() {
@@ -39,8 +39,8 @@ export default {
     planTimes() {
       const { uploadSpeedKb, fileSizeMb } = this
       const remainPackSize =
-        (fileSizeMb - parseInt((this.progressPercent / 100) * fileSizeMb, 10)) * 1024
-      const remainTime = parseInt(remainPackSize / uploadSpeedKb, 10) // 秒
+        (fileSizeMb - parseInt(String((this.progressPercent / 100) * fileSizeMb), 10)) * 1024
+      const remainTime = parseInt(String(remainPackSize / uploadSpeedKb), 10) // 秒
       if (remainPackSize === 0 && this.progressPercent !== 100) {
         return `1秒`
       }
