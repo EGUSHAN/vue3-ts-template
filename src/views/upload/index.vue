@@ -38,10 +38,12 @@ export default {
   computed: {
     planTimes() {
       const { uploadSpeedKb, fileSizeMb } = this
-      if (!fileSizeMb) return ''
       const remainPackSize =
         (fileSizeMb - parseInt((this.progressPercent / 100) * fileSizeMb, 10)) * 1024
       const remainTime = parseInt(remainPackSize / uploadSpeedKb, 10) // 秒
+      if (remainPackSize === 0 && this.progressPercent !== 100) {
+        return `1秒`
+      }
       if (remainTime < 60) {
         return `${remainTime}秒`
       }
