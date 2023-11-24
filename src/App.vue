@@ -1,4 +1,9 @@
 <template>
+  <svg-icon name="center-view" color="red" />
+  <svg-icon name="fullscreen" color="red"></svg-icon>
+  <svg-icon name="full-view" color="red"></svg-icon>
+  <svg-icon name="history" color="red"></svg-icon>
+  <svg-icon name="left-view" color="red"></svg-icon>
   <router-view></router-view>
   <div class="box">aaa</div>
 </template>

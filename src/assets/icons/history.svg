@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16"
+     viewBox="0 0 16 16"><g opacity="1" transform="translate(0 0)  rotate(0)"><mask id="bg-mask-0"
+                                                                                    fill="white"><use
+        transform="translate(0 0)  rotate(0)" xlink:href="#path_0"></use></mask><g mask="url(#bg-mask-0)"><path
+        id="路径 1" opacity="0.8"
+        d="M14.67,8c0,-3.68 -2.99,-6.67 -6.67,-6.67c-3.68,0 -6.67,2.99 -6.67,6.67c0,3.68 2.99,6.67 6.67,6.67c3.68,0 6.67,-2.99 6.67,-6.67zM8,16c-4.42,0 -8,-3.58 -8,-8c0,-4.42 3.58,-8 8,-8c4.42,0 8,3.58 8,8c0,4.42 -3.58,8 -8,8zM8.67,8.39l1.69,1.7c0.26,0.26 0.26,0.68 0,0.94c-0.13,0.12 -0.3,0.19 -0.47,0.19c-0.18,0 -0.35,-0.07 -0.47,-0.19l-1.9,-1.89c-0.12,-0.13 -0.19,-0.3 -0.19,-0.47v-4.01c0,-0.36 0.3,-0.66 0.67,-0.66c0.37,0 0.67,0.3 0.67,0.66z"></path></g></g><defs><rect
+        id="path_0" x="0" y="0" width="16" height="16"/></defs></svg>
