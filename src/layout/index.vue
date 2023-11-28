@@ -1,5 +1,6 @@
 <template>
   <button @click="changeTheme">切换主题</button>
+  {{ systemStore.theme }}
   <button @click="changeThemeWithOs">跟随系统</button>
   <button @click="changeFont('small')">小</button>
   <button @click="changeFont('middle')">中</button>
@@ -8,7 +9,8 @@
 </template>
 
 <script lang="ts">
-import { ref, onUnmounted } from 'vue'
+import { onUnmounted } from 'vue'
+import { useSystemStore } from '@/store/system.ts'
 
 export default {
   name: 'main-layout'
@@ -16,15 +18,15 @@ export default {
 </script>
 
 <script lang="ts" setup>
-const themeRef = ref<string>('light')
+const systemStore = useSystemStore()
 
 // 获取当前系统的媒体查询列表
 const os = window.matchMedia('(prefers-color-scheme: dark)')
 
 const changeTheme = () => {
-  const theme = themeRef.value === 'light' ? 'dark' : 'light'
+  const theme = systemStore.theme === 'light' ? 'dark' : 'light'
+  systemStore.setTheme(theme)
   document.documentElement.setAttribute('data-theme', theme)
-  themeRef.value = theme
   // 不需要通过监听系统主题色变化修改主题色
   os.removeEventListener('change', modifyThemeByOs)
 }
@@ -42,7 +44,7 @@ const changeThemeWithOs = () => {
 const modifyThemeByOs = () => {
   const theme = os.matches ? 'dark' : 'light'
   document.documentElement.setAttribute('data-theme', theme)
-  themeRef.value = theme
+  systemStore.setTheme(theme)
 }
 
 onUnmounted(() => {
