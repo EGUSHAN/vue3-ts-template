@@ -19,7 +19,6 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
       styles: path.resolve(__dirname, 'src/styles')
     },
-    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.vue', '.json']
   },
   css: {
     preprocessorOptions: {

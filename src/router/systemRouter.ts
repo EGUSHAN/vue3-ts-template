@@ -4,12 +4,22 @@ const routes: RouteRecordRaw[] = [
   {
     name: 'layout',
     path: '/',
-    component: () => import(/* webpackChunkName: "layout" */ '@/layout/index.vue')
+    redirect: 'sortablejs'
   },
   {
-    name: 'upload',
-    path: '/upload',
-    component: () => import(/* webpackChunkName: "layout" */ '@/views/upload/index.vue')
+    name: 'sortablejs',
+    path: '/sortablejs',
+    component: () => import(/* webpackChunkName: "sortablejs" */ '@/views/sortablejs/index.vue')
+  },
+  {
+    name: 'theme',
+    path: '/theme',
+    component: () => import(/* webpackChunkName: "theme" */ '@/views/theme/index.vue')
+  },
+  {
+    name: 'fontSize',
+    path: '/fontSize',
+    component: () => import(/* webpackChunkName: "fontSize" */ '@/views/fontSize/index.vue')
   }
 ]
 
