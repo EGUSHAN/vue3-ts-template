@@ -6,14 +6,18 @@
 </template>
 
 <script lang="ts">
+import { useSystemStore, SizeType } from '@/store/system.ts'
+
 export default {
   name: 'font-size'
 }
 </script>
 
 <script setup lang="ts">
-const changeFont = (type: string) => {
-  document.documentElement.dataset.size = type
+const systemStore = useSystemStore()
+
+const changeFont = (type: SizeType) => {
+  systemStore.setSize(type)
 }
 </script>
 

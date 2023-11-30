@@ -23,7 +23,6 @@ const os = window.matchMedia('(prefers-color-scheme: dark)')
 const changeTheme = () => {
   const theme = systemStore.theme === 'light' ? 'dark' : 'light'
   systemStore.setTheme(theme)
-  document.documentElement.dataset.theme = theme
   // 不需要通过监听系统主题色变化修改主题色
   os.removeEventListener('change', modifyThemeByOs)
 }
@@ -40,7 +39,6 @@ const changeThemeWithOs = () => {
 
 const modifyThemeByOs = () => {
   const theme = os.matches ? 'dark' : 'light'
-  document.documentElement.dataset.theme = theme
   systemStore.setTheme(theme)
 }
 
