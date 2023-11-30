@@ -5,7 +5,7 @@ export type ThemeType = 'light' | 'dark'
 export type SizeType = 'small' | 'middle' | 'large' | 'outside'
 
 export interface SystemStateInter {
-  theme: ThemeProp
+  theme: ThemeType
   size: SizeType
 }
 
