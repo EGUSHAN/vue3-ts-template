@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import 'normalize.css'
 import 'element-plus/dist/index.css'
 import App from './App.vue'
@@ -14,6 +15,7 @@ import 'virtual:svg-icons-register'
 const app = createApp(App)
 
 const pinia = createPinia()
+pinia.use(piniaPluginPersistedstate)
 
 app.component('svg-icon', SvgIcon)
 

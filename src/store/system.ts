@@ -15,5 +15,6 @@ export const useSystemStore = defineStore('system', {
     setTheme(type: ThemeProp) {
       this.theme = type
     }
-  }
+  },
+  persist: true
 })
