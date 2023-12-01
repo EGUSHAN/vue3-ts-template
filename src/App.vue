@@ -1,9 +1,13 @@
 <template>
-  <router-view />
+  <el-config-provider :locale="locale">
+    <router-view />
+  </el-config-provider>
 </template>
 
 <script lang="ts">
-import { onMounted } from 'vue'
+import { computed, onMounted } from 'vue'
+import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
+import en from 'element-plus/dist/locale/en.mjs'
 import { useSystemStore } from '@/store/system.ts'
 
 export default {
@@ -12,6 +16,9 @@ export default {
 </script>
 <script setup lang="ts">
 const systemStore = useSystemStore()
+
+// 当前系统的语言
+const locale = computed(() => (systemStore.language === 'zh-cn' ? zhCn : en))
 
 onMounted(() => {
   // 设置系统主题模式
