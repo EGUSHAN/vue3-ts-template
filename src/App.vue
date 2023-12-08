@@ -25,15 +25,15 @@ const systemStore = useSystemStore()
 // 当前系统的语言
 const locale = computed(() => (systemStore.language === 'zh-cn' ? zhCn : en))
 
+emitter.on('test', type => {
+  console.log('Yohoho 我是 mitt 哦', type)
+})
 // 设置系统的主题
 useThemeByOs()
 
 onMounted(() => {
   // 设置系统字体
   document.documentElement.dataset.size = systemStore.size
-  emitter.on('test', type => {
-    console.log('Yohoho 我是 mitt 哦', type)
-  })
 })
 </script>
 
