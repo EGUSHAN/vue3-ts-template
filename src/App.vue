@@ -8,6 +8,7 @@
 import { computed, onMounted } from 'vue'
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 import en from 'element-plus/dist/locale/en.mjs'
+import emitter from '@/utils/emitter.ts'
 import { useSystemStore } from '@/store/system.ts'
 import useThemeByOs from '@/hooks/useThemeByOs.ts'
 
@@ -27,6 +28,9 @@ useThemeByOs()
 onMounted(() => {
   // 设置系统字体
   document.documentElement.dataset.size = systemStore.size
+  emitter.on('test', type => {
+    console.log('Yohoho 我是 mitt 哦', type)
+  })
 })
 </script>
 
