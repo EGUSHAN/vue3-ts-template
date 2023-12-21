@@ -4,6 +4,7 @@ import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import 'normalize.css'
 import 'element-plus/dist/index.css'
 import App from './App.vue'
+import AntDesignVue from '@/plugins/ant-design-vue'
 
 // 注册路由
 import router from './router'
@@ -21,5 +22,6 @@ app.component('svg-icon', SvgIcon)
 
 app.use(router)
 app.use(pinia)
+app.use(AntDesignVue)
 
 app.mount('#app')

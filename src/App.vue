@@ -21,7 +21,6 @@ export default {
 </script>
 <script setup lang="ts">
 const systemStore = useSystemStore()
-
 // 当前系统的语言
 const locale = computed(() => (systemStore.language === 'zh-cn' ? zhCn : en))
 
